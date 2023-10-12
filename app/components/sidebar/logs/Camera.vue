@@ -8,6 +8,21 @@
 import Vue from "vue";
 import { makeFullUrl } from "../../../store";
 
+const cameraSocket = new WebSocket("ws://robot.go:8080");//check this is correct web address
+
+// Listen for messages
+socket.addEventListener("message", (event) => {
+  console.log("Message from server: ", event.data);
+  export default {
+
+  name: 'Images',
+  data () {
+    return {
+      url: makeFullUrl("/static/image.jpg"),
+      cacheKey: +new Date(),
+    }
+  }
+});
 
 export default {
 
